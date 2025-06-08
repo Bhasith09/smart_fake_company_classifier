@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Company Detector</title>
+</head>
+<body>
+    <h2>Fake Company Detection</h2>
+    <form method="POST" action="/predict">
+        Website: <input type="text" name="website"><br><br>
+        Email: <input type="text" name="email"><br><br>
+        Review Score (1.0 to 5.0): <input type="text" name="review"><br><br>
+        Job Description: <br>
+        <textarea name="description" rows="5" cols="50"></textarea><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+    <h3>Prediction Result: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
