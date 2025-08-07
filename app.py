@@ -1,37 +1,31 @@
 from flask import Flask, render_template, request
-import joblib
-import numpy as np
+from company_scraper import collect_company_data
+from data_handler import save_company_data  # Add this import
 
 app = Flask(__name__)
-model = joblib.load("fake_company_detector.pkl")
+SERPAPI_KEY = "23416fceb088389320f491084a493f646b72e3c8a7b9510c44809400c35c8884"
 
-@app.route("/")
+@app.route('/')
 def home():
-    return render_template("index.html")
+    return render_template('index.html', result=None)
 
-@app.route("/predict", methods=["POST"])
-def predict():
-    website = request.form["website"]
-    review = float(request.form["review"])
-    email = request.form["email"]
-    desc = request.form["description"]
+@app.route('/check', methods=['POST'])
+def check():
+    company_name = request.form['company_name']
+    website_url = request.form['website_url']
+    result = collect_company_data(company_name, website_url, SERPAPI_KEY)
+    
+    # Save the data and verify
+    if save_company_data(result):
+        print("Data saved successfully")  # Check Flask console for this
+    else:
+        print("Failed to save data")  # Check Flask console
+    
+    return render_template('index.html', result=result)
 
-    # Feature 1: suspicious_words
-    suspicious_words = 1 if any(word in desc.lower() for word in ['pay', 'fee', 'money', 'charges', 'suspicious']) else 0
-
-    # Feature 2: mail_check (domain looks suspicious or unprofessional)
-    suspicious_domains = ['gmail.com', 'yahoo.com', 'outlook.com', 'protonmail.com']
-    domain = email.split("@")[-1]
-    mail_check = 1 if domain in suspicious_domains else 0
-
-    # Feature 3: review_score
-    review_score = review
-
-    # Final feature array
-    features = np.array([[suspicious_words, mail_check, review_score]])
-    result = model.predict(features)[0]
-
-    return render_template("index.html", prediction="Fake" if result else "Genuine")
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+

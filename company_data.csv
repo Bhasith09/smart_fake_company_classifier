@@ -1,0 +1,5 @@
+timestamp,company_name,website_url,domain,domain_age,has_ssl,email,scam_keywords_count,verdict
+2025-08-07T16:03:09.073317,paypal,https://www.paypal.com,paypal.com,26.08,TRUE,,1,✅ Genuine
+2025-08-07T16:07:10.010570,Zephyr Technologies,https://zephyrtechnologies.co/,zephyrtechnologies.co,6.13,True,,0,✅ Genuine
+2025-08-07T16:12:01.848092,/EDUBYHEART-INDIA-PRIVATE-LIMITED,https://www.zaubacorp.com,zaubacorp.com,10.77,True,,0,✅ Genuine
+2025-08-07T16:12:59.598647,Crts global,https://zephyrtechnologies.co/,zephyrtechnologies.co,6.13,True,,0,✅ Genuine
