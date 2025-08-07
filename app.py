@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request
 from company_scraper import collect_company_data
 from data_handler import save_company_data  # Add this import
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
-SERPAPI_KEY = "spl_key"
+SERPAPI_KEY = os.getenv('SERPAPI_KEY')  # Get key from environment
 
 @app.route('/')
 def home():
