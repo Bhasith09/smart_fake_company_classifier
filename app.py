@@ -11,15 +11,14 @@ def home():
 
 @app.route('/check', methods=['POST'])
 def check():
-    company_name = request.form['company_name']
     website_url = request.form['website_url']
-    result = collect_company_data(company_name, website_url, SERPAPI_KEY)
+    result = collect_company_data(website_url, SERPAPI_KEY)  # Removed company_name parameter
     
     # Save the data and verify
     if save_company_data(result):
-        print("Data saved successfully")  # Check Flask console for this
+        print("Data saved successfully")
     else:
-        print("Failed to save data")  # Check Flask console
+        print("Failed to save data")
     
     return render_template('index.html', result=result)
 
