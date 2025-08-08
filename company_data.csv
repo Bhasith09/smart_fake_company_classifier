@@ -14,3 +14,5 @@ timestamp,company_name,website_url,domain,domain_age,has_ssl,email,scam_keywords
 2025-08-07T20:27:34.774212,Zephyr Technologies & Solutions,https://zephyrtechnologies.co/,zephyrtechnologies.co,6.13,False,,1,❌ Fake or Suspicious
 2025-08-07T20:27:47.581252,Niveus Solutions (Part of NTT DATA) - Cloud Consulting | IT Services | Digitization,https://niveussolutions.com/,niveussolutions.com,12.37,True,biz@niveussolutions.com,1,✅ Genuine
 2025-08-07T20:31:35.199277,Niveus Solutions (Part of NTT DATA) - Cloud Consulting | IT Services | Digitization,https://niveussolutions.com/,niveussolutions.com,12.37,True,biz@niveussolutions.com,1,✅ Genuine
+2025-08-08T17:06:38.384051,Zephyr Technologies & Solutions,https://zephyrtechnologies.co/,zephyrtechnologies.co,6.13,True,,1,✅ Genuine
+2025-08-08T17:13:17.744641,Niveus Solutions (Part of NTT DATA) - Cloud Consulting | IT Services | Digitization,https://niveussolutions.com/,niveussolutions.com,12.38,True,biz@niveussolutions.com,1,✅ Genuine
