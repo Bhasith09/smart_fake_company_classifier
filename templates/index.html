@@ -222,7 +222,13 @@
         <div class="verdict {% if 'Genuine' in result.Verdict %}verdict-genuine{% else %}verdict-fake{% endif %}">
             {{ result.Verdict }}
         </div>
-    </div>
+    
+    {% if result['Verdict Explanation'] %}
+    <p style="margin-top: 10px; color: #444; line-height: 1.6; white-space: pre-line;">
+        {{ result['Verdict Explanation'] }}
+    </p>
+{% endif %}
+</div
     {% endif %}
 
     <!-- Loading spinner HTML -->

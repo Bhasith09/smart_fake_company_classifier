@@ -150,19 +150,36 @@ def collect_company_data(website_url, serpapi_key):
     data["Google Links"] = links
     data["Review Snippets"] = snippets
 
-    # Final Verdict
+    # Final Verdict with explanation
     score = 0
+    reasons = []
+
     if data["Domain Age"] < 1:
         score += 1
+        reasons.append("The domain is very new (less than 1 year old).")
+
     if data["SSL"] == 0:
         score += 1
+        reasons.append("The website does not have an SSL certificate.")
+
     if not data["Email"]:
         score += 1
+        reasons.append("No official company email found on the website.")
+
     if data["Scam Keywords"] > 3:
         score += 1
+        reasons.append("Website content includes scam-related keywords.")
+
     if len(data["Review Snippets"]) == 0:
         score += 1
+        reasons.append("No Google reviews or links were found.")
 
-    data["Verdict"] = "✅ Genuine" if score < 3 else "❌ Fake or Suspicious"
+    if score < 3:
+        data["Verdict"] = "✅ Genuine"
+        data["Verdict Explanation"] = "This company seems trustworthy based on available signals like domain age, secure connection, valid contact info, and presence of reviews."
+    else:
+        data["Verdict"] = "❌ Fake or Suspicious"
+        data["Verdict Explanation"] = "The company seems suspicious due to multiple red flags:\n- " + "\n- ".join(reasons)
+
 
     return data
