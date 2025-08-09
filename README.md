@@ -1,61 +1,88 @@
-Fake Company Checker
+🔍 Fake Company Checker
 
-A web-based tool built with Python (Flask) that detects potentially fake or suspicious companies by analyzing their website data, domain information, and online presence. This project helps job seekers, freelancers, and businesses avoid scams by providing a trustworthiness report.
+A Flask-based web app that detects potentially fake or suspicious companies by analyzing their website’s data, domain information, and online presence.
+This project helps job seekers, freelancers, and businesses avoid scams by generating a detailed trustworthiness report.
 
 🚀 Features
-Domain Analysis
 
-Extracts domain age (WHOIS lookup)
+🔍 Domain Analysis
 
-Checks for SSL certificate availability
+* Extracts domain name and domain age using WHOIS lookup
 
-Website Scraping
+* Checks if the website has a valid SSL certificate
 
-Attempts to detect official company name
+🕸 Website Scraping
 
-Searches for an official email on the site
+* Attempts to extract the official company name from meta tags, titles, and headings
 
-Counts scam-related keywords in content
+* Finds official company email addresses (same domain)
 
-Review Analysis
+* Counts scam-related keywords in website content
 
-Fetches Google review links & snippets using SerpAPI
+💬 Review Analysis
 
-Risk Assessment
+* Fetches Google review links using SerpAPI
 
-Generates a final verdict (Genuine ✅ or Fake/Suspicious ❌)
+* Collects review snippets for credibility check
 
-Provides a human-readable explanation for the verdict
+⚖️ Risk Assessment
 
-Data Logging
+* Generates a final verdict: ✅ Genuine or ❌ Fake/Suspicious
 
-Saves all company checks into a CSV file for research & record keeping
+* Provides detailed reasoning behind the verdict
 
-User-Friendly UI
+📝 Data Logging
 
-Clean HTML/CSS interface
+Saves all reports in company_data.csv for record keeping and analysis
 
-Mobile-friendly responsive design
+🎨 User-Friendly UI
 
-Loading spinner for better UX
+* Clean HTML/CSS design
+
+* Loading spinner for smooth user experience
 
 🛠️ Tech Stack
-Backend: Python, Flask
 
-Frontend: HTML5, CSS3 (vanilla)
+Backend:
 
-Data Handling: CSV
+* Python
 
-APIs: SerpAPI (Google Search)
+* Flask
 
-Libraries:
+Frontend:
 
-requests, beautifulsoup4 (web scraping)
+* HTML
 
-tldextract (domain extraction)
+* CSS
 
-python-whois (domain age lookup)
+APIs:
 
-ssl, socket (SSL check)
+SerpAPI for Google Search data
 
-dotenv (environment variable management)
+Libraries & Tools:
+
+* requests – HTTP requests for scraping
+
+* beautifulsoup4 – HTML parsing
+
+* tldextract – Domain extraction
+
+* python-whois – Domain age lookup
+
+* ssl, socket – SSL verification
+
+* dotenv – Secure environment variables
+
+
+
+
+
+💡 Future Enhancements
+
+🤖 AI-powered sentiment analysis for reviews
+
+🌍 Multi-language support
+
+☁️ Deploy to cloud (Heroku, Render, or Vercel)
+
+📊 Advanced fraud scoring algorithm
