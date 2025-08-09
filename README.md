@@ -3,6 +3,16 @@
 A Flask-based web app that detects potentially fake or suspicious companies by analyzing their website’s data, domain information, and online presence.
 This project helps job seekers, freelancers, and businesses avoid scams by generating a detailed trustworthiness report.
 
+
+![App Screenshot](static/a1.png)  
+![App Screenshot](static/a2.png)  
+![App Screenshot](static/a3.png)
+![App Screenshot](static/a4.png)  
+![App Screenshot](static/a5.png)  
+
+
+
+
 🚀 Features
 
 🔍 Domain Analysis
